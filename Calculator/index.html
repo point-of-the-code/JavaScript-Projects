@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Using HTML, CSS And JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" disabled>
+    <button class="red" onclick="clearResult()">Ac</button>
+    <button class="red" onclick="clearResult()">C</button>
+    <button class="orange" onclick="getResult('%')">%</button>
+    <button class="orange" onclick="getResult('/')">/</button>
+    <button onclick="getResult('7')">7</button>
+    <button onclick="getResult('8')">8</button>
+    <button onclick="getResult('9')">9</button>
+    <button class="orange" onclick="getResult('*')">*</button>
+    <button onclick="getResult('4')">4</button>
+    <button onclick="getResult('5')">5</button>
+    <button onclick="getResult('6')">6</button>
+    <button class="orange" onclick="getResult('-')">-</button>
+    <button onclick="getResult('1')">1</button>
+    <button onclick="getResult('2')">2</button>
+    <button onclick="getResult('3')">3</button>
+    <button class="orange" onclick="getResult('+')">+</button>
+    <button onclick="getResult('00')">00</button>
+    <button onclick="getResult('0')">0</button>
+    <button onclick="getResult('.')">.</button>
+    <button class="orange" onclick="getResult('=')">=</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
