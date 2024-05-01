@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	text-decoration:none;
+}
+
+body {
+	background-color: #212121;
+}
+
+.menu-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 50px;
+	height: 26px;
+	cursor: pointer;
+	z-index: 2;
+	.line {
+		position: absolute;
+		width: 50px;
+		height: 4px;
+		top: 0;
+		left: 0;
+		background: #fff;
+		&.top{
+			animation: line-top-close 1s ease both;
+		}
+		&.bottom{
+			top: initial;
+			bottom: 0;
+			animation: line-bottom-close 1s ease both;
+		}
+	}
+	&.active {
+		pointer-events: none;
+		.top {
+			animation: line-top-open 1s ease both;
+		}
+		.bottom {
+			animation: line-bottom-open 1s ease both;
+		}
+	}
+	&.entry{
+		.line{
+			animation:none;
+		}
+	}
+}
+
+.menu {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 300px;
+	height: 20px;
+	padding: 0 10px;
+	opacity: 0;
+	pointer-events: none;
+	transition: all .5s ease-in-out;
+	&.active {
+		opacity: 1;
+		pointer-events: all;
+		transition: all .5s ease-in-out .5s;
+	}
+	ul {
+		display: flex;
+		justify-content: space-between;
+		line-height: 20px;
+		color: white;
+		font-weight: 600;
+		text-transform: uppercase;
+		width: 280px;
+		li {
+			cursor: pointer;
+			transition: all .3s ease-in-out;
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+}
+
+@keyframes line-top-open {
+	0% {
+		transform: translate3d(0,0,0) scaleY(1) scaleX(1);
+	}
+	20% {
+		transform: translate3d(0,3px,0) scaleY(1) scaleX(1);
+	}
+	40% {
+		transform: translate3d(0,-20px,0) scaleY(.5) scaleX(1);
+	}
+	100% {
+		transform: translate3d(0,-20px,0) scaleY(.5) scaleX(6);
+	}
+}
+
+@keyframes line-bottom-open {
+	0% {
+		transform: translate3d(0,0,0) scaleY(1) scaleX(1);
+	}
+	20% {
+		transform: translate3d(0,-3px,0) scaleY(1) scaleX(1);
+	}
+	40% {
+		transform: translate3d(0,20px,0) scaleY(.5) scaleX(1);
+	}
+	100% {
+		transform: translate3d(0,20px,0) scaleY(.5) scaleX(6);
+	}
+}
+
+@keyframes line-top-close {
+	0% {
+		transform: translate3d(0,-20px,0) scaleY(.5) scaleX(6);
+	}
+	60% {
+		transform: translate3d(0,-20px,0) scaleY(.5) scaleX(1);
+	}
+	100% {
+		transform: translate3d(0,0,0) scaleY(1) scaleX(1);
+	}
+}
+
+@keyframes line-bottom-close {
+	0% {
+		transform: translate3d(0,20px,0) scaleY(.5) scaleX(6);
+	}
+	60% {
+		transform: translate3d(0,20px,0) scaleY(.5) scaleX(1);
+	}
+	100% {
+		transform: translate3d(0,0,0) scaleY(1) scaleX(1);
+	}
+}
